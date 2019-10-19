@@ -91,4 +91,5 @@ app.group("/api/v1", (router) => {
 
 })
 
-app.listen(port, ()=> console.log(`listen on port ${port}!`))
+// app.listen(port, ()=> console.log(`listen on port ${port}!`))
+app.listen(process.env.PORT || 5000)
