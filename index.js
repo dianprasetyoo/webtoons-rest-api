@@ -29,7 +29,9 @@ app.group("/api/v1", (router) => {
 
     //register
     router.post('/register', RegisterController.register)
-
+    
+    //Get semua user
+    router.get('/user', AuthController.getUser)
 
     //TAB FOR YOU SCREEN
     //GET SEMUA WEBTOON
