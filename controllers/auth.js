@@ -46,3 +46,8 @@ exports.register = (req, res) =>{
     })
 
 }
+
+//get semua user
+exports.getUser = (req, res) => {
+    user.findAll().then(item=>res.send(item));
+}
