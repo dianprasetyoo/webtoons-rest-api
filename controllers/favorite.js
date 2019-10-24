@@ -17,3 +17,13 @@ exports.getFavorite = (req, res) => {
         }).then(Favorite => res.send(Favorite));;
     }
 }
+
+//Add Favorite
+exports.storeFavorite = (req, res) => {
+    const {isFavorite} = req.body;
+    Favorite.create({
+        webtoon_id: req.params.webtoon_id,
+        user_id: req.params.user_id,
+        isFavorite
+    }).then(result => res.send(result));
+}
