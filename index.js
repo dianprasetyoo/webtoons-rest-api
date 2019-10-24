@@ -58,6 +58,9 @@ app.group("/api/v1", (router) => {
 
     //19. SEARCH SEMUA WEBTOON BERDASARKAN TITLE
     router.get('/webtoons', WebtoonsController.searchTitle) // localhost:5000/api/v1/webtoons?title=dice
+    
+        //Add Favorite
+    router.post('/favorite/:user_id/webtoon/:webtoon_id', FavoriteController.storeFavorite)
 
 
 
