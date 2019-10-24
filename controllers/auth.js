@@ -12,6 +12,7 @@ exports.login = (req, res) =>{
         if(user){
             const token = "Bearer " + jwt.sign({ userId: user.id}, 'my-secret-key')
             res.send({
+                id: user.id,
                 email,
                 token
             })
