@@ -1,5 +1,6 @@
 const models = require('../models')
 const Favorite = models.favorites
+const webtoons = models.webtoons
 
 //TAB Favorite
 //Get Semua Webtoon Favorite
@@ -10,6 +11,12 @@ exports.getFavorite = (req, res) => {
     if (favorite == 'true') {
         Favorite.findAll({
             where: {isFavorite: 1, user_id: user},
+            include: [{
+                model: webtoons,
+                as: 'webtoonID',
+                attributes: ['image'],
+            },
+            ],
     }).then(Favorite => res.send(Favorite));
     } else {
         Favorite.findAll({
