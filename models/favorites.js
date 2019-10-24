@@ -6,8 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     isFavorite: DataTypes.INTEGER
   }, {});
   favorites.associate = function(models) {
+    favorites.belongsTo(models.webtoons, {
       as: 'webtoonID',
       foreignKey: 'webtoon_id'
+    })
   };
   return favorites;
 };
