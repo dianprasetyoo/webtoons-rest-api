@@ -32,11 +32,11 @@ exports.register = (req, res) =>{
     user.findOne({where: {email, password}}).then(user=>{
 
         if(user){
-            const {id} = user;
+//             const {id} = user;
 
             const token = jwt.sign({ userId: user.id}, 'my-secret-key')
             res.send({
-                id,
+//                 id,
                 email,
                 token
             })
